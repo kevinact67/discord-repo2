@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.name }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Values.name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.name }}
+    spec:
+      containers:
+        - name: {{ .Values.name }}
+          image: quay.io/devtron/discord-alertmanager:ceceb475-65-352
+          env:
+            - name: DISCORD_WEBHOOK
+              value: {{ .Values.webhook }}
+          ports:
+            - name: {{ .Values.name }}
+              containerPort: 9094
+              protocol: TCP
+          

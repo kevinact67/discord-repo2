@@ -9,6 +9,6 @@ entries:
     name: chart-discord
     type: application
     urls:
-    - https://kevinact67.github.io/discord-repo2/chart-discord-0.1.0.tgz
+    - https://kevinact67.github.io/discord-repo2/chart-discord
     version: 0.1.0
 generated: "2022-08-18T16:13:13.3911155+02:00"
